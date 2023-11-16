@@ -1,0 +1,27 @@
+<section class="products-section mt-5">
+  <div class="container">
+    <div class="d-flex title-section">
+      <div>
+        <h2>Estos productos pueden ser tuyos</h2>
+        <p>No esperes más y aprovecha las promociones que tenemos para ti.</p>
+      </div>
+      <button class="btn btn-outline-primary">Ver catálogo</button>
+    </div>
+    <div class="py-5 products">
+      <div class="card-producto" [attr.data-perview]="preview" *ngFor="let product of products; let idx = index">
+        <div class="image mb-3 text-center">
+          <img [src]="'assets/images/producto'+(idx+1)+'.png'" alt="product">
+          <div class="flag-discount fw-semibold">{{product.discount}} % DSCTO.</div>
+        </div>
+        <div class="detail">
+          <p class="mb-2 brand fw-semibold text-uppercase">{{ product.brand }}</p>
+          <p class="mb-2 title fs-5 fw-bold">{{ product.title }}</p>
+          <p class="mb-0">
+            <span class="points fs-4 fw-bold">{{ product.points }}</span> Millas Benefit
+          </p>
+          <p class="mb-0">o S/ {{ product.price | currencyFormat }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

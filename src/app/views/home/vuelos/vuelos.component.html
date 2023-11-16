@@ -1,0 +1,32 @@
+<section class="vuelos-section">
+  <div class="container">
+    <div class="d-flex title-section">
+      <div>
+        <h2>Viaja con tus Millas</h2>
+        <p>Vuela a los más bellos destinos, canjeando tu Millas Benefit.</p>
+      </div>
+    </div>
+    <div class="py-5 vuelos">
+      <div class="row g-3">
+        <div class="col-sm-12 col-md-6 col-lg-3" *ngFor="let vuelo of vuelos; let idx = index">
+          <div class="card card-vuelo">
+            <div class="imagen">
+              <img [src]="'assets/images/vuelos'+(idx+1)+'.jpg'" alt="paisaje">
+            </div>
+            <div class="card-body">
+              <div class="detail">
+                <p class="mb-2 brand fw-semibold text-uppercase">VUELOS</p>
+                <p class="mb-0">Ida y vuelta desde:</p>
+                <p class="mb-2 title fs-5 fw-bold">{{ vuelo.destino }}</p>
+                <p class="mb-0">
+                  <span class="points fs-4 fw-bold">{{ vuelo.points }}</span> Millas Benefit
+                </p>
+                <p class="mb-0">o US$ {{ vuelo.price | currencyFormat }}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
