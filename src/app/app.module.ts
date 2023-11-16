@@ -3,6 +3,9 @@ import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { HomeModule } from './views/home/home.module';
+import { AppRoutingModule } from './app-routing.module';
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
+import { ProductsModule } from './views/products/products.module';
 
 @NgModule({
   declarations: [
@@ -10,9 +13,13 @@ import { HomeModule } from './views/home/home.module';
   ],
   imports: [
     BrowserModule,
-    HomeModule
+    HomeModule,
+    AppRoutingModule,
+    ProductsModule,
   ],
-  providers: [],
+  providers: [
+    { provide: LocationStrategy, useClass: HashLocationStrategy },
+  ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   bootstrap: [AppComponent]
 })

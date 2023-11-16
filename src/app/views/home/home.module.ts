@@ -6,14 +6,16 @@ import { SliderComponent } from './slider/slider.component';
 import { ValesComponent } from './vales/vales.component';
 import { ProductosComponent } from './productos/productos.component';
 import { VuelosComponent } from './vuelos/vuelos.component';
-import { CurrencyFormatPipe } from 'src/app/pipes/currency-format.pipe';
+import { PipesModule } from 'src/app/pipes/pipes.module';
+import { ComponentsModule } from 'src/app/components/components.module';
 
 @NgModule({
   imports: [
-    CommonModule
+    CommonModule,
+    PipesModule,
+    ComponentsModule,
   ],
   declarations: [
-    CurrencyFormatPipe,
     HomeComponent,
     NavbarComponent,
     SliderComponent,
@@ -24,7 +26,7 @@ import { CurrencyFormatPipe } from 'src/app/pipes/currency-format.pipe';
   exports: [
     HomeComponent,
   ],
-  providers: [CurrencyPipe],
+  providers: [],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class HomeModule { }

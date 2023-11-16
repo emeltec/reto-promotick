@@ -1,4 +1,5 @@
 import { Component, HostListener, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { BREAKPOINTS } from 'src/app/config/breakpoints';
 import { DATA_PRODUCTOS } from 'src/app/data/productos.data';
 import { IProduct } from 'src/app/interfaces/product';
@@ -12,7 +13,9 @@ export class ProductosComponent implements OnInit {
   products:IProduct[] = [];
   preview: number = 1;
 
-  constructor() { }
+  constructor(
+    private router: Router
+  ) { }
 
   // @HostListener('document:DOMContentLoaded', ['$event'])
   // onDomContentLoaded(event: Event) {
@@ -30,6 +33,10 @@ export class ProductosComponent implements OnInit {
 
   ngAfterViewInit() {
     this.resizeWidth();
+  }
+
+  viewCatalog() {
+    this.router.navigate(['/products'])
   }
 
   resizeWidth() {

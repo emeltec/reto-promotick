@@ -1,0 +1,42 @@
+<app-header-user></app-header-user>
+
+
+<section class="products-section mt-5">
+  <div class="container">
+    <div class="row g-4 py-5 products">
+      <!-- <div class="card-producto col-sm-12 col-md-6 col-lg-4" *ngFor="let product of products; let idx = index">
+        <div class="image mb-3 text-center">
+          <img [src]="'assets/images/producto'+(idx+1)+'.png'" alt="product">
+          <div class="flag-discount fw-semibold">{{product.discount}} % DSCTO.</div>
+        </div>
+        <div class="detail">
+          <p class="mb-2 brand fw-semibold text-uppercase">{{ product.brand }}</p>
+          <p class="mb-2 title fs-5 fw-bold">{{ product.title }}</p>
+          <p class="mb-0">
+            <span class="points fs-4 fw-bold">{{ product.points }}</span> Millas Benefit
+          </p>
+          <p class="mb-0">o S/ {{ product.price | currencyFormat }}</p>
+        </div>
+      </div> -->
+      <div class="col-sm-12 col-md-6 col-lg-3" *ngFor="let product of products; let idx = index">
+        <div class="card card-vuelo">
+          <div class="imagen">
+            <img [src]="'assets/images/producto'+(idx+1)+'.png'" alt="product">
+            <div class="flag-discount fw-semibold">{{product.discount}} % DSCTO.</div>
+          </div>
+          <div class="card-body">
+            <div class="detail">
+              <p class="mb-2 brand fw-semibold text-uppercase">{{ product.brand }}</p>
+              <p class="mb-2 title fs-5 fw-bold">{{ product.title }}</p>
+              <p class="mb-0">
+                <span class="points fs-4 fw-bold">{{ product.points }}</span> Millas Benefit
+              </p>
+              <p class="mb-2">o S/ {{ product.price | currencyFormat }}</p>
+              <button class="btn btn-primary">Agregar al carrito</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

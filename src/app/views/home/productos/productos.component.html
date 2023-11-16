@@ -5,7 +5,7 @@
         <h2>Estos productos pueden ser tuyos</h2>
         <p>No esperes más y aprovecha las promociones que tenemos para ti.</p>
       </div>
-      <button class="btn btn-outline-primary">Ver catálogo</button>
+      <button class="btn btn-outline-primary" (click)="viewCatalog()">Ver catálogo</button>
     </div>
     <div class="py-5 products">
       <div class="card-producto" [attr.data-perview]="preview" *ngFor="let product of products; let idx = index">
