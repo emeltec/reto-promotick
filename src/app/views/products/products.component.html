@@ -9,7 +9,7 @@
       <div class="col-sm-12 col-md-6 col-lg-3" *ngFor="let product of products; let idx = index">
         <div class="card card-vuelo">
           <div class="imagen">
-            <img [src]="'assets/images/producto'+(idx+1)+'.png'" alt="product">
+            <img [src]="'assets/images/'+product?.image" alt="product">
             <div class="flag-discount fw-semibold">{{product.discount}} % DSCTO.</div>
           </div>
           <div class="card-body">
@@ -20,7 +20,7 @@
                 <span class="points fs-4 fw-bold">{{ product.points }}</span> Millas Benefit
               </p>
               <p class="mb-2">o S/ {{ product.price | currencyFormat }}</p>
-              <button class="btn btn-primary" (click)="addProduct(product)">Agregar al carrito</button>
+              <button class="btn btn-primary" (click)="addProduct(product)" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Agregar al carrito</button>
             </div>
           </div>
         </div>
@@ -28,3 +28,23 @@
     </div>
   </div>
 </section>
+
+
+<!-- Modal -->
+<div class="modal fade modal-sm" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body text-center">
+        <img [src]="'assets/images/'+currentProduct?.image" alt="">
+        <p class="fs-5 fw-semibold">¡Producto añadido al carrito!</p>
+        <div class="buttons">
+          <button type="button" class="btn btn-sm btn-primary" data-bs-dismiss="modal" (click)="viewCart()">Ir al carrito</button>
+          <button type="button" class="btn btn-sm btn-link" data-bs-dismiss="modal">Seguir comprando</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

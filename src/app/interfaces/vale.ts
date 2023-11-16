@@ -2,5 +2,6 @@ export interface IVale {
   id: number;
   brand: string;
   title: string;
-  points: string;
+  points: number;
+  image?: string
 }

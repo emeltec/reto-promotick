@@ -16,7 +16,7 @@
         <div class="cart-item d-flex" *ngFor="let product of products; let idx = index">
           <div class="detail d-flex">
             <div class="image">
-              <img [src]="'assets/images/producto'+(idx+1)+'.png'" alt="product">
+              <img [src]="'assets/images/'+product?.image" alt="product">
               <button class="btn btn-sm btn-outline-secondary mt-1" type="button" (click)="deleteProduct(product.id)">Eliminar</button>
             </div>
             <div class="ms-3">

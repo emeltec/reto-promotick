@@ -5,6 +5,7 @@ export interface IProduct {
   points: number;
   price: number;
   discount?: number;
+  image?: string;
 }
 
 export interface IProductCart extends IProduct {

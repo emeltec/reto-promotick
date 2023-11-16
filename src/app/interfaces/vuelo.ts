@@ -3,4 +3,5 @@ export interface IVuelo {
   destino: string;
   points: number;
   price: number;
+  image?: string;
 }

@@ -56,3 +56,10 @@
   border-bottom-right-radius: 10px;
   z-index: 1;
 }
+
+.modal .buttons {
+  display: inline-grid;
+}
+.btn-link {
+  color: #05be50 !important;
+}
