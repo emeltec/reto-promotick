@@ -1,6 +1,6 @@
 # RetoPromotick
 
-[Angular CLI](https://github.com/angular/angular-cli)
+[VER PUBLICADO](https://emeltec.github.io/reto-promotick/)
 
 ## Development server
 
