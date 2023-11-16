@@ -8,8 +8,13 @@ const routes: Routes = [
     path: '', redirectTo: 'home', pathMatch: 'full'
   },
   {
-    path: 'products',
+    path: 'productos',
     loadChildren: () => import('./views/products/products.module').then(m => m.ProductsModule),
+    // canActivate: [UserLoggedGuard]
+  },
+  {
+    path: 'carrito',
+    loadChildren: () => import('./views/cart/cart.module').then(m => m.CartModule),
     // canActivate: [UserLoggedGuard]
   },
 

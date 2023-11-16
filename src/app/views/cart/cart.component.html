@@ -1,0 +1,69 @@
+<app-header-user></app-header-user>
+
+<app-header-search></app-header-search>
+
+
+
+<section class="cart-page my-5">
+  <div class="container mb-5">
+    <h3>Carrito de canjes</h3>
+  </div>
+
+  <div class="container" *ngIf="products.length > 0">
+    <div class="content d-flex">
+      <div class="cart-items">
+
+        <div class="cart-item d-flex" *ngFor="let product of products; let idx = index">
+          <div class="detail d-flex">
+            <div class="image">
+              <img [src]="'assets/images/producto'+(idx+1)+'.png'" alt="product">
+              <button class="btn btn-sm btn-outline-secondary mt-1" type="button" (click)="deleteProduct(product.id)">Eliminar</button>
+            </div>
+            <div class="ms-3">
+              <p class="mb-0 brand">{{ product.brand }}</p>
+              <p class="mb-0 title fw-bold fs-5">{{ product.title }}</p>
+            </div>
+          </div>
+          <div class="price-info">
+            <p class="mb-0 points">
+              <span class="points fs-4 fw-bold">{{ product.points }}</span> Millas Benefit
+            </p>
+            <p class="mb-0 currency">
+              o S/ {{ product.price | currencyFormat }}
+            </p>
+            <div class="quantity-selector mt-2">
+              <button class="remove" type="button" (click)="deleteOne(product.id)">
+                -
+              </button>
+              <input type="text" readonly="true" [value]="product?.quantity">
+              <button class="add" type="button" (click)="addOne(product)">
+                +
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="resume">
+        <h5>Detalle de precios</h5>
+        <div class="d-flex total-products">
+          <div class="me-4">
+            Subtotal {{totalProducts}} productos
+          </div>
+          <div class="total-millas">
+            <p class="mb-2 fw-bold">{{totalMillas}} Millas</p>
+            <p class="mb-2">o S/ {{totalPrice}}</p>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <div *ngIf="products.length == 0">
+    <h4 class="text-center">Tu carrito de canjes está vacío</h4>
+  </div>
+</section>

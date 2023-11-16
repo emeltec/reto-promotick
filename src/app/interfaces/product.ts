@@ -6,3 +6,7 @@ export interface IProduct {
   price: number;
   discount?: number;
 }
+
+export interface IProductCart extends IProduct {
+  quantity?: number
+}

@@ -1,0 +1,36 @@
+.menu {
+  border-bottom: 1px solid #ebecec;
+}
+
+.menu-items {
+  justify-content: space-between;
+}
+
+.items-left .item {
+  margin-right: 1rem;
+  text-decoration: none;
+  color: #474646;
+}
+
+.items-right .item {
+  text-decoration: none;
+  color: #474646;
+}
+
+.items-right .item {
+  display: flex;
+  align-items: center;
+  & i {
+    margin-right: 5px;
+  }
+}
+
+.items-right .item .counter {
+  background-color: #05be50c8 !important;
+  color: #fff !important;
+  text-align: center;
+  border-radius: 50%;
+  min-width: 24px;
+  min-height: 24px;
+  margin-left: 8px;
+}

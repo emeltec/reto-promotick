@@ -36,7 +36,7 @@ export class ProductosComponent implements OnInit {
   }
 
   viewCatalog() {
-    this.router.navigate(['/products'])
+    this.router.navigate(['/productos'])
   }
 
   resizeWidth() {

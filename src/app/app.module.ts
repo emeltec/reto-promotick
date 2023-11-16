@@ -6,6 +6,7 @@ import { HomeModule } from './views/home/home.module';
 import { AppRoutingModule } from './app-routing.module';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { ProductsModule } from './views/products/products.module';
+import { CartModule } from './views/cart/cart.module';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { ProductsModule } from './views/products/products.module';
     HomeModule,
     AppRoutingModule,
     ProductsModule,
+    CartModule
   ],
   providers: [
     { provide: LocationStrategy, useClass: HashLocationStrategy },

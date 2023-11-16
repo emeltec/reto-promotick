@@ -1,0 +1,14 @@
+<div class="menu">
+  <div class="container menu-items py-3 d-flex">
+    <div class="items-left">
+      <a class="active item" [routerLink]="'/home'">Home</a>
+      <a class="active item" [routerLink]="'/productos'">Catalogo</a>
+    </div>
+    <div class="items-right">
+      <a class="item" [routerLink]="'/carrito'">
+        <i class="bi bi-cart-check-fill"></i> Carrito
+        <span class="counter">{{totalProducts}}</span>
+      </a>
+    </div>
+  </div>
+</div>
